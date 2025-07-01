@@ -21,7 +21,7 @@ let allChats = [
     {
         from:"Professor",
         to:"Students",
-        msg:"Hlw, What can i do for u?",
+        msg:"Hlw, What can i do for you?",
         created_at: new Date(),
     },
     {
