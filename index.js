@@ -21,7 +21,7 @@ main()
 .catch((err) => console.log(err));
 
 async function main() {
-    await mongoose.connect("mongodb://127.0.0.1:27017/whatsapp");
+    await mongoose.connect("mongodb://127.0.0.1:27017/fakewhatsapp");
 }
 
 //Index Route
@@ -85,5 +85,5 @@ app.get("/",(req,res)=>{
 });
 
 app.listen(8080,()=>{
-    console.log("Server is listening");
+    console.log("Server is listening....");
 });
