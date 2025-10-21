@@ -1,19 +1,121 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>New chat</title>
-    <link rel="stylesheet" href="/style2.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>New Chat</title>
+
+  <!-- ✅ Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- ✅ Custom Styling -->
+  <style>
+    body {
+      background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+      font-family: 'Poppins', sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .chat-form-card {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 100%;
+      max-width: 450px;
+      transition: all 0.3s ease;
+    }
+
+    .chat-form-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.15);
+    }
+
+    h3 {
+      text-align: center;
+      color: #333;
+      font-weight: 600;
+      margin-bottom: 25px;
+    }
+
+    .form-control {
+      border-radius: 12px;
+      padding: 10px 15px;
+      border: 1px solid #ccc;
+      transition: border 0.3s ease;
+    }
+
+    .form-control:focus {
+      border-color: #0d6efd;
+      box-shadow: 0 0 5px rgba(13, 110, 253, 0.3);
+    }
+
+    textarea {
+      resize: none;
+      height: 120px;
+    }
+
+    .btn-submit {
+      background-color: #0d6efd;
+      color: white;
+      border-radius: 30px;
+      width: 100%;
+      padding: 10px 0;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-submit:hover {
+      background-color: #084298;
+      transform: translateY(-2px);
+    }
+
+    .back-link {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      color: #0d6efd;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
 </head>
+
 <body>
-    <h3>Create another msg...</h3>
+  <div class="chat-form-card">
+    <h3>💬 Create a New Message</h3>
+
     <form method="POST" action="/chats">
-        <input placeholder="Your Name:" name="from"><br><br>
-        <textarea name="msg" placeholder="Enter the msg"></textarea>
-        <br> <br><input placeholder="Receiver Name:" name="to">
-        <br> <br><button>SUBMIT</button>
+      <div class="mb-3">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-control" name="from" placeholder="Enter your name" required>
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" name="msg" placeholder="Type your message..." required></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label class="form-label">Receiver Name</label>
+        <input type="text" class="form-control" name="to" placeholder="Enter receiver's name" required>
+      </div>
+
+      <button type="submit" class="btn btn-submit">🚀 Send Message</button>
     </form>
-    
+
+    <a href="/chats" class="back-link">⬅️ Back to Conversations</a>
+  </div>
+
+  <!-- ✅ Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
